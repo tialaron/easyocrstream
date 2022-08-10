@@ -55,7 +55,7 @@ with col2:
     #data1 = pytesseract.image_to_data(img_name, output_type=Output.DICT)
     #st.write(text1)
     reader1 = easyocr.Reader(['ru'])
-    #bounds1 = reader1.readtext(img_name)
+    bounds1 = reader1.readtext(img_name)
     #image2 = boxesdrawer.draw_boxes(img,bounds1)
     #image2.save('outfile1.jpg')
     #st.image(image2)
