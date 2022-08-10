@@ -1,6 +1,8 @@
 import streamlit as st
 import spacy
 import spacy_streamlit
+import numpy as np
+import PIL
 
 from spacy import displacy
 
