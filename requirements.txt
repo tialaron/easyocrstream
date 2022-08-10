@@ -3,4 +3,5 @@ numpy==1.19.4
 streamlit==1.11.1
 spacy==3.4.1
 spacy_streamlit
+matplotlib==3.5.2
 protobuf~=3.19.0
