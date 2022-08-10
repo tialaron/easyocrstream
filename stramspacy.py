@@ -4,6 +4,7 @@ import spacy_streamlit
 import numpy as np
 import PIL
 
+from PIL import Image,ImageDraw
 from spacy import displacy
 
 
