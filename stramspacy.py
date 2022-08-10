@@ -8,10 +8,11 @@ from PIL import Image,ImageDraw
 from spacy import displacy
 
 image11 = Image.open('pipesegm.png')
+path_pict = '/app/easyocrstream/pictures/'
 
 st.subheader('Распознавание документов с помощью EasyOCR.')
 st.write("""
-Лабораторная работа *"Распознавание документов с помощью библиотеки EasyOCR"* позволяет продемонстрировать 
+Лабораторная работа *"Распознавание документов с помощью библиотеки [EasyOCR](https://www.jaided.ai/easyocr/)"* позволяет продемонстрировать 
 работу фреймворка, основанного на [Pytorch](https://pytorch.org/)  для извлечения текста из изображения. Это обычная OCR библиотека, которая может читать как
 текст с большим расстоянием между строк, так и плотный текст в документе. В настоящее время поддерживает более 80 языков и расширяется.
 """)
@@ -38,3 +39,16 @@ with st.expander("Общая схема"):
     \n8. Приложение Streamlit:
     \nОтображение документа.
     ''')
+
+st.write('Нейронная сеть, представленная здесь, обучена распзнавать документы в виде JPG файлов.')
+st.write('Вы можете выбрать любой документ из представленных в списке для распознавания.')
+option1 = st.selectbox('Какой документ Вы выбираете?',('ИНН','СНИЛС','полис омс','паспорт1','паспорт2'))
+col1,col2 = st.columns(2)
+with col1:
+    img_name = path_pict + option1 + '.jpg'
+    img = plt.imread(img_name)
+    st.image(img)
+with col2:
+    text1 = pytesseract.image_to_string(img_name, lang='rus').replace('\n\x0c', '')
+    data1 = pytesseract.image_to_data(img_name, output_type=Output.DICT)
+    st.write(text1)
