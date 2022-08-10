@@ -5,7 +5,9 @@ from spacy import displacy
 
 import spacy_streamlit
 
-models = ["en_core_web_sm", "/path/to/model"]
-default_text = "Sundar Pichai is the CEO of Google."
-visualizers = ["ner", "textcat"]
-spacy_streamlit.visualize(models, default_text, visualizers)
+st.subheader('Распознавание документов с помощью EasyOCR.')
+st.write("""
+Лабораторная работа *"Распознавание документов с помощью библиотеки EasyOCR"* позволяет продемонстрировать 
+работу фреймворка, основанного на LSTM(Long-Short-Term-Memory) нейронной сети,
+ обученной распознавать печатный текст документов. Подробнее про LSTM слои можно почитать здесь https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM .
+""")
