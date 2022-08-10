@@ -1,3 +1,8 @@
+import streamlit as st
+
+import spacy
+from spacy import displacy
+
 import spacy_streamlit
 
 models = ["en_core_web_sm", "/path/to/model"]
