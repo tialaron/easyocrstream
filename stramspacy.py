@@ -1,9 +1,9 @@
 import streamlit as st
-
 import spacy
+import spacy_streamlit
+
 from spacy import displacy
 
-import spacy_streamlit
 
 st.subheader('Распознавание документов с помощью EasyOCR.')
 st.write("""
