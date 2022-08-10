@@ -2,5 +2,5 @@ pip==22.2.2
 numpy==1.19.4 
 streamlit==1.11.1
 spacy==3.4.1
-
+spacy_streamlit
 protobuf~=3.19.0
