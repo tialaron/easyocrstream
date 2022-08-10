@@ -54,3 +54,4 @@ with col2:
     #text1 = pytesseract.image_to_string(img_name, lang='rus').replace('\n\x0c', '')
     #data1 = pytesseract.image_to_data(img_name, output_type=Output.DICT)
     #st.write(text1)
+    st.image(img)
