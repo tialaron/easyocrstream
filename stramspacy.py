@@ -3,6 +3,7 @@ import spacy
 import spacy_streamlit
 import numpy as np
 import PIL
+import matplotlib.pyplot as plt
 
 from PIL import Image,ImageDraw
 from spacy import displacy
