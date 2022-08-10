@@ -3,6 +3,7 @@ import spacy
 import spacy_streamlit
 import numpy as np
 import PIL
+import easyocr
 import matplotlib.pyplot as plt
 
 from PIL import Image,ImageDraw
@@ -50,6 +51,6 @@ with col1:
     img = plt.imread(img_name)
     st.image(img)
 with col2:
-    text1 = pytesseract.image_to_string(img_name, lang='rus').replace('\n\x0c', '')
-    data1 = pytesseract.image_to_data(img_name, output_type=Output.DICT)
-    st.write(text1)
+    #text1 = pytesseract.image_to_string(img_name, lang='rus').replace('\n\x0c', '')
+    #data1 = pytesseract.image_to_data(img_name, output_type=Output.DICT)
+    #st.write(text1)
