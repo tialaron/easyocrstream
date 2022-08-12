@@ -58,7 +58,7 @@ st.write('Теперь нужно разметить документ таким
 st.write('Для этого нажмите на кнопку "Распознать" и дождитесь когда появится документ с выделенными участками текста')
 is_clicked1 = st.button("Распознать")
 if is_clicked1:
-            image1 = open(path_img,'rb')
+            image1 = open(full_path,'rb')
             f = image1.read()
             file_bytes = np.asarray(bytearray(f),dtype=np.uint8)
             bytearray_img = cv2.imdecode(file_bytes, 1)
