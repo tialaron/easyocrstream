@@ -81,8 +81,8 @@ is_clicked2 = st.button("Найти")
 if is_clicked2:
             text1 = ''
             #for i in range(len(bounds)):
-            text1 = text1 + bounds[i][1] + '\n'
+            #text1 = text1 + bounds[i][1] + '\n'
             nlp1 = spacy.load('ru_core_news_sm')
-            doc1 = nlp1(text1)
-            ent_html = displacy.render(doc1, style="ent", jupyter=False)
-            st.markdown(ent_html, unsafe_allow_html=True)
+            #doc1 = nlp1(text1)
+            #ent_html = displacy.render(doc1, style="ent", jupyter=False)
+            #st.markdown(ent_html, unsafe_allow_html=True)
