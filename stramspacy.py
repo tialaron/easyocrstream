@@ -72,4 +72,17 @@ if is_clicked1:
             image2.save('out111.jpg')
             st.image('out111.jpg')
             
-            
+
+st.write('Далее необходимо сделать так, чтобы нейронка "поняла" текст и выделила в нем главное.')
+st.write('Данную проблему обычно называют [NER-задачей](https://sysblok.ru/glossary/named-entity-recognition-ner/) или Named Entity Recognition.')
+st.write('В ее решении может помочь библиотека [Spacy](https://spacy.io/). Это промышленная библиотека по выделению именованных сущностей из текста.')
+st.write('Нажмите на кнопку "Найти" и дождитесь результата.')
+is_clicked2 = st.button("Найти")
+if bounds and is_clicked2:
+            text1 = ''
+            for i in range(len(bounds)):
+                                    text1 = text1 + bounds[i][1] + '\n'
+            nlp1 = spacy.load('ru_core_news_sm')
+            doc1 = nlp1(text1)
+            ent_html = displacy.render(doc1, style="ent", jupyter=False)
+            st.markdown(ent_html, unsafe_allow_html=True)
