@@ -79,7 +79,7 @@ st.write('В ее решении может помочь библиотека [S
 st.write('Нажмите на кнопку "Найти" и дождитесь результата.')
 is_clicked2 = st.button("Найти")
 if is_clicked2:
-            text1 = 'Далее необходимо сделать так, чтобы нейронка "поняла" текст и выделила в нем главное'
+            text1 = ''
             for i in range(len(bounds)):
                         text1 = text1 + bounds[i][1] + '\n'
             nlp1 = spacy.load('ru_core_news_sm')
