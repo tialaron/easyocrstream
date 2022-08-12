@@ -70,6 +70,11 @@ if is_clicked1:
             image2 = boxesdrawer.draw_boxes(full_path, bounds)
             image2.save('out111.jpg')
             st.image('out111.jpg')
+            text1 = bounds[1][1]
+            nlp1 = spacy.load('ru_core_news_sm')
+            doc1 = nlp1(text1)
+            ent_html = displacy.render(doc1, style="ent", jupyter=False)
+            st.markdown(ent_html, unsafe_allow_html=True)
             
 
 st.write('Далее необходимо сделать так, чтобы нейронка "поняла" текст и выделила в нем главное.')
