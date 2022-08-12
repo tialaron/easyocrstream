@@ -68,7 +68,7 @@ if is_clicked1:
             reader1 = easyocr.Reader(['ru'])
             bounds = reader1.readtext(bytearray_img)
             print(bounds)
-            image2 = boxesdrawer.draw_boxes(path_img, bounds)
+            image2 = boxesdrawer.draw_boxes(full_path, bounds)
             image2.save('out111.jpg')
             st.image('out111.jpg')
             
