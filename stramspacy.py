@@ -54,4 +54,20 @@ option1 = st.selectbox('Какой документ Вы выбираете?',('
 full_path = path_pict+option1+'_ЧБ.jpg'
 img = Image.open(full_path)
 st.image(full_path)
-
+st.write('Теперь нужно разметить документ таким образом, чтобы выделить из него текст.')
+st.write('Для этого нажмите на кнопку "Распознать" и дождитесь когда появится документ с выделенными участками текста')
+is_clicked1 = st.button("Распознать")
+if is_clicked1:
+            image1 = open(path_img,'rb')
+            f = image1.read()
+            file_bytes = np.asarray(bytearray(f),dtype=np.uint8)
+            bytearray_img = cv2.imdecode(file_bytes, 1)
+            image1.close()
+            reader1 = easyocr.Reader(['ru'])
+            bounds = reader1.readtext(bytearray_img)
+            print(bounds)
+            image2 = boxesdrawer.draw_boxes(path_img, bounds)
+            image2.save('out111.jpg')
+            st.image('out111.jpg')
+            
+            
