@@ -5,6 +5,7 @@ import numpy as np
 import PIL
 import easyocr
 import matplotlib.pyplot as plt
+import cv2
 
 from PIL import Image,ImageDraw
 from spacy import displacy
