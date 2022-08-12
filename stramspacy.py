@@ -6,6 +6,7 @@ import PIL
 import easyocr
 import matplotlib.pyplot as plt
 import cv2
+import boxesdrawer
 
 from PIL import Image,ImageDraw
 from spacy import displacy
