@@ -45,17 +45,4 @@ with st.expander("Общая схема"):
 st.write('Нейронная сеть, представленная здесь, обучена распзнавать документы в виде JPG файлов.')
 st.write('Вы можете выбрать любой документ из представленных в списке для распознавания.')
 option1 = st.selectbox('Какой документ Вы выбираете?',('ИНН','СНИЛС','полис омс','паспорт1','паспорт2'))
-col1,col2 = st.columns(2)
-with col1:
-    img_name = path_pict + option1 + '.jpg'
-    img = plt.imread(img_name)
-    st.image(img)
-with col2:
-    #text1 = pytesseract.image_to_string(img_name, lang='rus').replace('\n\x0c', '')
-    #data1 = pytesseract.image_to_data(img_name, output_type=Output.DICT)
-    #st.write(text1)
-    reader1 = easyocr.Reader(['en'])
-    #bounds1 = reader1.readtext(img_name)
-    #image2 = boxesdrawer.draw_boxes(img,bounds1)
-    #image2.save('outfile1.jpg')
-    #st.image(image2)
+
