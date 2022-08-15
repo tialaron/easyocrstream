@@ -53,7 +53,7 @@ st.markdown('''<h1 style='text-align: center; color: black;'
             unsafe_allow_html=True)
 st.write('Нейронная сеть, представленная здесь, обучена распзнавать документы в виде JPG файлов.')
 st.write('Вы можете выбрать любой документ из представленных в списке для распознавания.')
-option1 = st.selectbox('Какой документ Вы выбираете?',('ИНН','СНИЛС','полис','регистрация','паспорт2'))
+option1 = st.selectbox('Какой документ Вы выбираете?',('ИНН','СНИЛС','полис','регистрация','договор'))
 full_path = path_pict+option1+'_ЧБ.jpg'
 img = Image.open(full_path)
 st.image(full_path)
