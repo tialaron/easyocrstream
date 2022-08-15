@@ -79,7 +79,7 @@ if is_clicked1:
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
             st.markdown(ent_html, unsafe_allow_html=True)
             file_list = open('bounds_list.txt', 'wt')
-            file_list.write(bounds)
+            file_list.write(str(bounds))
             file_list.close()
 
 st.write('Далее необходимо сделать так, чтобы нейронка "поняла" текст и выделила в нем главное.')
