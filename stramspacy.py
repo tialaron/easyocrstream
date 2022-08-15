@@ -92,3 +92,5 @@ if is_clicked2:
             doc1 = nlp1(text1)
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
             st.markdown(ent_html, unsafe_allow_html=True)
+st.write('Ключевые обозначения: PER - личные данные (Personal), ORG - название организации (Organisation), LOC - локация, географическое положение (Location), DATE - дата')
+
