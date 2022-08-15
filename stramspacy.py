@@ -71,13 +71,6 @@ if is_clicked1:
             image2 = boxesdrawer.draw_boxes(full_path, bounds)
             image2.save('out111.jpg')
             st.image('out111.jpg')
-            text1 = ''
-            for i in range(len(bounds)):
-                        text1 = text1 + bounds[i][1] + '\n'
-            nlp1 = spacy.load('ru_core_news_sm')
-            doc1 = nlp1(text1)
-            ent_html = displacy.render(doc1, style="ent", jupyter=False)
-            st.markdown(ent_html, unsafe_allow_html=True)
             file_list = open('bounds_list.txt', 'wt')
             file_list.write(str(bounds))
             file_list.close()
