@@ -77,7 +77,7 @@ if is_clicked1:
             doc1 = nlp1(text1)
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
             st.markdown(ent_html, unsafe_allow_html=True)
-            
+            print(type(bounds))
 
 st.write('Далее необходимо сделать так, чтобы нейронка "поняла" текст и выделила в нем главное.')
 st.write('Данную проблему обычно называют [NER-задачей](https://sysblok.ru/glossary/named-entity-recognition-ner/) или Named Entity Recognition.')
