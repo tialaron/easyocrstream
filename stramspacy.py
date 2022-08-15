@@ -7,6 +7,7 @@ import easyocr
 import matplotlib.pyplot as plt
 import cv2
 import boxesdrawer
+import ast
 
 from PIL import Image,ImageDraw
 from spacy import displacy
@@ -90,10 +91,10 @@ if is_clicked2:
             file_reader = open('bounds_list.txt', 'rt')
             text_bounds = file_reader.read()
             file_reader.close()
-            bounds = list(text_bounds)
-            text1 = bounds[1][1]
-            #for i in range(len(bounds)):
-                        #text1 = text1 + bounds[i][1] + '\n'
+            bounds = ast.literal_eval(text_bounds)
+            text1 = ''
+            for i in range(len(bounds)):
+                        text1 = text1 + bounds[i][1] + '\n'
             nlp1 = spacy.load('ru_core_news_sm')
             doc1 = nlp1(text1)
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
