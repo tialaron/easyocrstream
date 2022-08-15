@@ -93,4 +93,8 @@ if is_clicked2:
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
             st.markdown(ent_html, unsafe_allow_html=True)
 st.write('Ключевые обозначения: PER - личные данные (Personal), ORG - название организации (Organisation), LOC - локация, географическое положение (Location), DATE - дата')
-
+st.write('А теперь, ответьте на вопросы:')
+st.write('1. Как расшифровывается аббревиатура OCR?')
+st.write('2. Как расшифровывается аббревиатура NER?')
+st.write('3. Подсчитайте выделенные разноцветные поля (PER,ORG,LOC). Сколько их всего?')
+st.write('4. Подсчитайте количество полей каждого типа (сколько PER, сколько ORG, сколько LOC).')
