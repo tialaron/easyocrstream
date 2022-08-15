@@ -77,7 +77,9 @@ if is_clicked1:
             doc1 = nlp1(text1)
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
             st.markdown(ent_html, unsafe_allow_html=True)
-            print(type(bounds))
+            file_list = open('bounds_list.txt', 'wt')
+            file_list.write(bounds)
+            file_list.close()
 
 st.write('Далее необходимо сделать так, чтобы нейронка "поняла" текст и выделила в нем главное.')
 st.write('Данную проблему обычно называют [NER-задачей](https://sysblok.ru/glossary/named-entity-recognition-ner/) или Named Entity Recognition.')
@@ -85,6 +87,10 @@ st.write('В ее решении может помочь библиотека [S
 st.write('Нажмите на кнопку "Найти" и дождитесь результата.')
 is_clicked2 = st.button("Найти")
 if is_clicked2:
+            file_reader = open('bounds_list.txt', 'rt')
+            text_bounds = file_reader.read()
+            file_reader.close()
+            bounds = list(text_bounds)
             text1 = bounds[1][1]
             #for i in range(len(bounds)):
                         #text1 = text1 + bounds[i][1] + '\n'
